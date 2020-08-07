@@ -1,0 +1,1 @@
+alert("Whatever you do DON'T press the OK button!");
