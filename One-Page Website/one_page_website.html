@@ -2,8 +2,10 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Bourbon</title>
 		<link rel="stylesheet" type="text/css" href="./CSS/one_page_website.css">
+		<script src="./JS/one_page_website.js"></script>
 	</head>
 	<body>
 	
@@ -29,31 +31,66 @@
 		</div>
 		<!-- END HOME -->
 		
-		<!-- PICTURES -->
+		<!-- PICTURES FOR THE LIGHTBOX -->
 		<div id="pictures">
 			<h1>Pictures</h1>
-				<div>
-				
-					<!-- Photo-1 -->
-					<div>
-						<img src="bourbon_1.jpg" alt="5th of bourbon">
+				<div class="row">
+					<div class="column">
+						<img src="bourbon_1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" style="width: 100%;max-width:300px">
 					</div>
-					<!-- END PHOTO-1 -->
-					
-					<!-- Photo-2 -->
-					<div>
-						<img src="bourbon_glass_1.jpg" alt="Glassware for bourbon">
+					<div class="column">
+						<img src="bourbon_glass_1.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow" style="width: 100%;max-width: 300px">
 					</div>
-					<!-- END PHOTO-2 -->
-					
-					<!-- Photo-3 -->
-					<div>
-						<img src="bourbon_rocks_1.jpg" alt="Bourbon on the Rocks">
+					<div class="column">
+						<img src="bourbon_rocks_1.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow" style="width: 100%;max-width: 300px">
 					</div>
-					<!-- END PHOTO-3 -->
 				</div>
 		</div>
-		<!-- END PICTURES -->
+		<!-- END PICTURES FOR THE LIGHTBOX -->
+
+		<!-- Modal/Lightbox -->
+		<div id="myModal" class="modal">
+			<span class="close cursor" onclick="closeModal()">&times;</span>
+			<div class="modal-content">
+
+				<div class="mySlides">
+					<div class="numbertext">1 / 3</div>
+					<img src="bourbon_1.jpg" style="width: 100%;">     <!-- Check here for sizing -->
+				</div>
+
+				<div class="mySlides">
+					<div class="numbertext">2 / 3</div>
+					<img src="bourbon_glass_1.jpg" style="width: 100%;">
+				</div>
+
+				<div class="mySlides">
+					<div class="numbertext">3 / 3</div>
+					<img src="bourbon_rocks_1.jpg" style="width: 100%;">
+				</div>
+
+				<!-- Next/Prev Controls -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				<!-- Caption Text -->
+				<div class="caption-container">
+					<p id="caption"></p>
+				</div>
+
+				<!-- Thumbnail image controls -->
+				<div class="column">
+					<img class="demo" src="bourbon_1.jpg" onclick="currentSlide(1)" alt="Bottle" style="width: 100%;max-width: 375px">
+				</div>
+
+				<div class="column">
+					<img class="demo" src="bourbon_glass_1.jpg" onclick="currentSlide(2)" alt="Glass" style="width: 100%;max-width: 375px">
+				</div>
+
+				<div class="column">
+					<img class="demo" src="bourbon_rocks_1.jpg" onclick="currentSlide(3)" alt="Full glass" style="width: 100%;max-width: 375px">
+				</div>
+			</div>
+		</div>
 		
 		<!-- VIDEO -->
 		<div id="video">
